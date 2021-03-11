@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<!--<style>
+body {
+  background-image: url('{% static 'blog/1308869.jpg' %}');
+}
+</style>-->
+<!--<img src="{% static 'blog/1308869.jpg' %}" alt="My image">-->
+<article class="media content-section" style="width: 610px; border: 2px solid gray;  
+              padding: 10px; border-radius: 10px;  
+                              margin:5px; justify-content:center;display: grid;margin-left: auto;margin-right: auto;" >
+
+<div class="col-md-12"><br>
+<h1 style="color: #7c795d; font-family: 'Brush Script MT', serif; font-size: 50px; font-weight: normal; line-height: 48px; margin:0;">Login</h1><br>
+<div class="form-group">
+<form method="POST">
+	{% csrf_token %}
+			{{ form | crispy }}
+
+
+
+<!--	{{form.as_p}}-->
+	<button type="submit" class="btn btn-outline-secondary">Login</button>
+</form>
+
+</div>
+</article>
+{% endblock %}
